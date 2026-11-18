@@ -1,25 +1,251 @@
 {
   "known_at": "2026-10-08T00:00:00+08:00",
+  "period": {"start": "2026-07-01", "end": "2026-09-30"},
+  "factors": {
+    "source": "示例审计口径系数（占位）",
+    "rates": {
+      "tax:MYR:tax": {"low": 0.20, "base": 0.22},
+      "revenue:MYR:revenue": {"low": 0.19, "base": 0.21},
+      "investment:MYR:investment": {"low": 0.19, "base": 0.21},
+      "tax:IDR:tax": {"low": 0.000060, "base": 0.000065},
+      "revenue:IDR:revenue": {"low": 0.000058, "base": 0.000062},
+      "tax:CNY:tax": {"low": 0.90, "base": 0.95},
+      "revenue:CNY:revenue": {"low": 0.88, "base": 0.93}
+    }
+  },
   "documents": [
+    {
+      "kind": "fiscal",
+      "id": "MY-2026",
+      "revision": "r1",
+      "received_at": "2026-01-05T09:00:00+08:00",
+      "payload": {"jurisdiction": "Malaysia", "fiscal_year": "2026", "start": "2026-01-01", "end": "2026-12-31"}
+    },
     {
       "kind": "plant",
       "id": "P1",
       "revision": "r1",
-      "received_at": "2026-10-06T12:00:00+08:00",
+      "received_at": "2026-06-01T12:00:00+08:00",
       "payload": {
+        "name": "Kedah 电池组装厂",
         "country": "Malaysia",
-        "commissioned_on": "2026-09-01"
+        "commissioned_on": "2026-09-01",
+        "capacity_tons_per_year": 120000
+      }
+    },
+    {
+      "kind": "plant",
+      "id": "P2",
+      "revision": "r1",
+      "received_at": "2026-08-01T12:00:00+08:00",
+      "payload": {
+        "name": "Batam 前驱体厂",
+        "country": "Indonesia",
+        "commissioned_on": "2026-12-01",
+        "capacity_tons_per_year": 80000
       }
     },
     {
       "kind": "shipment",
       "id": "L1",
       "revision": "r1",
-      "received_at": "2026-10-06T12:00:00+08:00",
+      "received_at": "2026-07-10T12:00:00+08:00",
       "payload": {
+        "lot": "L1",
         "origin": "Indonesia",
         "plant": "P1",
-        "tons": 40
+        "tons": 40,
+        "processed_on": "2026-07-20",
+        "destination": "Malaysia"
+      }
+    },
+    {
+      "kind": "shipment",
+      "id": "L2",
+      "revision": "r1",
+      "received_at": "2026-09-05T12:00:00+08:00",
+      "payload": {
+        "lot": "L2",
+        "origin": "Indonesia",
+        "plant": "P1",
+        "tons": 60,
+        "processed_on": "2026-09-20",
+        "destination": "Malaysia"
+      }
+    },
+    {
+      "kind": "shipment",
+      "id": "L3",
+      "revision": "r1",
+      "received_at": "2026-09-25T12:00:00+08:00",
+      "payload": {
+        "lot": "L3",
+        "origin": "Australia",
+        "plant": "P2",
+        "tons": 25,
+        "processed_on": "2026-09-28",
+        "destination": "Indonesia"
+      }
+    },
+    {
+      "kind": "origin_certificate",
+      "id": "C1",
+      "revision": "r1",
+      "received_at": "2026-07-15T12:00:00+08:00",
+      "payload": {
+        "lot": "L1",
+        "origin_country": "Indonesia",
+        "issued_on": "2026-07-14",
+        "evidence_ref": "COO/2026/0714"
+      }
+    },
+    {
+      "kind": "employment",
+      "id": "E1",
+      "revision": "r1",
+      "received_at": "2026-10-02T12:00:00+08:00",
+      "payload": {
+        "plant": "P1",
+        "period_start": "2026-09-01",
+        "period_end": "2026-09-30",
+        "local_employees": 120,
+        "total_employees": 132,
+        "evidence_ref": "HR/2026/09"
+      }
+    },
+    {
+      "kind": "employment",
+      "id": "E2",
+      "revision": "r1",
+      "received_at": "2026-10-03T12:00:00+08:00",
+      "payload": {
+        "plant": "P1",
+        "period_start": "2026-07-01",
+        "period_end": "2026-08-31",
+        "local_employees": 80,
+        "total_employees": 90,
+        "evidence_ref": "HR/2026/07-08"
+      }
+    },
+    {
+      "kind": "employment",
+      "id": "E3",
+      "revision": "r1",
+      "received_at": "2026-10-03T12:00:00+08:00",
+      "payload": {
+        "plant": "P1",
+        "period_start": "2026-10-01",
+        "period_end": "2026-10-31",
+        "local_employees": 140,
+        "total_employees": 150
+      }
+    },
+    {
+      "kind": "power",
+      "id": "PW1",
+      "revision": "r1",
+      "received_at": "2026-10-02T12:00:00+08:00",
+      "payload": {
+        "plant": "P1",
+        "period_start": "2026-09-01",
+        "period_end": "2026-09-30",
+        "supplied_mwh": 5200,
+        "coverage_ratio": 0.85,
+        "evidence_ref": "UTIL/2026/09"
+      }
+    },
+    {
+      "kind": "tax",
+      "id": "T1",
+      "revision": "r1",
+      "received_at": "2026-10-05T12:00:00+08:00",
+      "payload": {
+        "plant": "P1",
+        "period_start": "2026-07-01",
+        "period_end": "2026-09-30",
+        "amount": 350000,
+        "currency": "MYR",
+        "category": "企业所得税",
+        "evidence_ref": "TAX/2026/Q3"
+      }
+    },
+    {
+      "kind": "revenue",
+      "id": "R1",
+      "revision": "r1",
+      "received_at": "2026-10-05T12:00:00+08:00",
+      "payload": {
+        "plant": "P1",
+        "period_start": "2026-07-01",
+        "period_end": "2026-09-30",
+        "amount": 12000000,
+        "currency": "MYR",
+        "evidence_ref": "FIN/2026/Q3"
+      }
+    },
+    {
+      "kind": "service",
+      "id": "S1",
+      "revision": "r1",
+      "received_at": "2026-10-04T12:00:00+08:00",
+      "payload": {
+        "plant": "P1",
+        "regions": ["Kedah", "Penang", "Perak"],
+        "effective_from": "2026-09-01",
+        "evidence_ref": "SVC/2026/09"
+      }
+    },
+    {
+      "kind": "commitment",
+      "id": "CM-JOBS",
+      "revision": "r1",
+      "received_at": "2026-06-01T12:00:00+08:00",
+      "payload": {
+        "scope": "jobs",
+        "plant": "P1",
+        "target": 200,
+        "target_date": "2027-06-30",
+        "label": "本地雇佣 200 人"
+      }
+    },
+    {
+      "kind": "commitment",
+      "id": "CM-TAX",
+      "revision": "r1",
+      "received_at": "2026-06-01T12:00:00+08:00",
+      "payload": {
+        "scope": "tax",
+        "plant": "P1",
+        "target": 2000000,
+        "currency": "MYR",
+        "target_date": "2027-12-31",
+        "label": "三年累计纳税"
+      }
+    },
+    {
+      "kind": "commitment",
+      "id": "CM-POWER",
+      "revision": "r1",
+      "received_at": "2026-06-01T12:00:00+08:00",
+      "payload": {
+        "scope": "power",
+        "plant": "P1",
+        "target": 5000,
+        "target_date": "2026-09-30",
+        "label": "园区供电 5000MWh"
+      }
+    },
+    {
+      "kind": "commitment",
+      "id": "CM-CAP",
+      "revision": "r1",
+      "received_at": "2026-06-01T12:00:00+08:00",
+      "payload": {
+        "scope": "capacity",
+        "plant": "P2",
+        "target": 80000,
+        "target_date": "2027-03-31",
+        "label": "Batam 厂 8 万吨产能"
       }
     }
   ]
