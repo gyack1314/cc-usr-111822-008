@@ -1,90 +1,26 @@
 {
-  "known_at": [
-    "2026-08-01T00:00:00+00:00",
-    "2026-09-01T00:00:00+00:00"
-  ],
+  "known_at": "2026-10-08T00:00:00+08:00",
   "documents": [
     {
-      "source": "观测机构",
-      "document_id": "observation-original",
+      "kind": "plant",
+      "id": "P1",
       "revision": "r1",
-      "received_at": "2026-07-30T00:00:00+00:00",
-      "records": [
-        {
-          "kind": "observation",
-          "id": "obs-1",
-          "revision": "r1",
-          "valid_from": "2026-07-01",
-          "payload": {
-            "metric": "local_value",
-            "region": "country-A",
-            "unit": "资料单位",
-            "value": 35
-          }
-        }
-      ]
+      "received_at": "2026-10-06T12:00:00+08:00",
+      "payload": {
+        "country": "Malaysia",
+        "commissioned_on": "2026-09-01"
+      }
     },
     {
-      "source": "参照机构",
-      "document_id": "reference",
+      "kind": "shipment",
+      "id": "L1",
       "revision": "r1",
-      "received_at": "2026-07-29T00:00:00+00:00",
-      "records": [
-        {
-          "kind": "reference",
-          "id": "ref-1",
-          "revision": "r1",
-          "valid_from": "2026-07-01",
-          "payload": {
-            "metric": "local_value",
-            "region": "country-A",
-            "unit": "资料单位",
-            "value": 30
-          }
-        }
-      ]
-    },
-    {
-      "source": "业务部门",
-      "document_id": "rule",
-      "revision": "r1",
-      "received_at": "2026-07-28T00:00:00+00:00",
-      "records": [
-        {
-          "kind": "rule",
-          "id": "rule-1",
-          "revision": "r1",
-          "valid_from": "2026-07-01",
-          "payload": {
-            "metric": "local_value",
-            "region": "country-A",
-            "unit": "资料单位",
-            "threshold": 7,
-            "direction": "above",
-            "action": "投资"
-          }
-        }
-      ]
-    },
-    {
-      "source": "观测机构",
-      "document_id": "observation-revised",
-      "revision": "r1",
-      "received_at": "2026-08-15T00:00:00+00:00",
-      "records": [
-        {
-          "kind": "observation",
-          "id": "obs-1",
-          "revision": "r2",
-          "valid_from": "2026-07-01",
-          "payload": {
-            "metric": "local_value",
-            "region": "country-A",
-            "unit": "资料单位",
-            "value": 42
-          }
-        }
-      ]
+      "received_at": "2026-10-06T12:00:00+08:00",
+      "payload": {
+        "origin": "Indonesia",
+        "plant": "P1",
+        "tons": 40
+      }
     }
   ]
 }

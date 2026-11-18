@@ -1,5 +1,5 @@
 [project]
-name="apec-analysis-008"
+name="battery-cooperation"
 version="0.1.0"
 requires-python=">=3.11"
 dependencies=[]
